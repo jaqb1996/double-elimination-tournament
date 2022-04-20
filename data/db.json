@@ -192,11 +192,11 @@
           {
             "FirstParticipant": {
               "name": "Team 1",
-              "score": 3
+              "score": "3"
             },
             "SecondParticipant": {
               "name": "Team 1",
-              "score": 1
+              "score": "1"
             },
             "date": "Pon 17",
             "id": 14
