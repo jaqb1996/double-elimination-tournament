@@ -14,15 +14,9 @@ namespace TournamentWebApi.DataAccess
         {
             this.tournamentContext = tournamentContext;
         }
-        public void CreateUser()
+        public void CreateUser(User user)
         {
-            tournamentContext.User.Add(
-                new User()
-                {
-                    Email = "user@email.com",
-                    PasswordHash = "12345"
-                }
-            );
+            tournamentContext.User.Add(user);
             tournamentContext.SaveChanges();
         }
     }
