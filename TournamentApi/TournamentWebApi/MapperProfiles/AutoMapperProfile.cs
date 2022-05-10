@@ -16,6 +16,7 @@ namespace TournamentWebApi.MapperProfiles
             CreateMap<TournamentFromUser, Tournament>();
             CreateMap<UserRegistrationData, User>()
                 .ForMember(u => u.PasswordHash, opt => opt.MapFrom(ur => AuthHelper.HashPassword(ur.Password)));
+            CreateMap<TeamFromUser, Team>();
         }
     }
 }

@@ -16,6 +16,12 @@ namespace TournamentWebApi.DataAccess
             this.context = context;
         }
 
+        public void AddMatch(Match match)
+        {
+            context.Match.Add(match);
+            context.SaveChanges();
+        }
+
         public void CreateTournament(Tournament tournament)
         {
             context.Tournament.Add(tournament);
@@ -25,6 +31,12 @@ namespace TournamentWebApi.DataAccess
         public IEnumerable<Tournament> GetAllTournaments()
         {
             return context.Tournament;
+        }
+
+        public void SaveTeam(Team team)
+        {
+            context.Team.Add(team);
+            context.SaveChanges();
         }
     }
 }

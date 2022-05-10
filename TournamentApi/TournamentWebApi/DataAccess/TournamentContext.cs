@@ -30,9 +30,6 @@ namespace TournamentWebApi.DataAccess
                 .HasIndex(u => u.Email)
                 .IsUnique();
             builder.Entity<Match>()
-                .Property(m => m.Bracket)
-                .HasConversion<string>();
-            builder.Entity<Match>()
                 .HasOne(m => m.Tournament)
                 .WithMany(t => t.Matches)
                 .IsRequired()
