@@ -22,7 +22,7 @@ namespace TournamentWebApi.Authentication
         }
         public string Authenticate(string email, string password)
         {
-            var passwordHash = password; // TODO: Add hashing password
+            var passwordHash = AuthHelper.HashPassword(password);
             if (!authRepo.IsEmailAndPasswordCorrect(email, passwordHash))
             {
                 return null;

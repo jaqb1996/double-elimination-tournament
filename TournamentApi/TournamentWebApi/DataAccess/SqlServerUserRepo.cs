@@ -19,5 +19,10 @@ namespace TournamentWebApi.DataAccess
             tournamentContext.User.Add(user);
             tournamentContext.SaveChanges();
         }
+
+        public User GetUserFromEmail(string email)
+        {
+            return tournamentContext.User.Single(u => u.Email == email);
+        }
     }
 }

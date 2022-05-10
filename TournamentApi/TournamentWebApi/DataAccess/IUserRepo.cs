@@ -9,5 +9,6 @@ namespace TournamentWebApi.DataAccess
     public interface IUserRepo
     {
         void CreateUser(User user);
+        User GetUserFromEmail(string email);
     }
 }

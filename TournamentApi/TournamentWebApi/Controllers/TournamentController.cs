@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using TournamentWebApi.DataAccess;
 using TournamentWebApi.Models;
@@ -19,11 +20,13 @@ namespace TournamentWebApi.Controllers
     {
         private readonly ITournamentRepo tournamentRepo;
         private readonly IMapper mapper;
+        private readonly IUserRepo userRepo;
 
-        public TournamentController(ITournamentRepo tournamentRepo, IMapper mapper)
+        public TournamentController(ITournamentRepo tournamentRepo, IMapper mapper, IUserRepo userRepo)
         {
             this.tournamentRepo = tournamentRepo;
             this.mapper = mapper;
+            this.userRepo = userRepo;
         }
         [HttpPost]
         [Route("[action]")]
@@ -31,7 +34,7 @@ namespace TournamentWebApi.Controllers
         {
             // TODO: validate tournament
             var tournament = mapper.Map<Tournament>(tournamentFromUser);
-            tournament.UserId = 1; // TODO: Get User id
+            tournament.Owner = GetUser();
             tournamentRepo.CreateTournament(tournament);
             // Add tournament teams
             List<Team> teams = mapper.Map<List<TeamFromUser>, List<Team>>(tournamentFromUser.Teams);
@@ -81,6 +84,17 @@ namespace TournamentWebApi.Controllers
         {
             var tournaments = tournamentRepo.GetAllTournaments();
             return StatusCode(200, tournaments);
+        }
+        //[HttpGet]
+        //[Route("[action]")]
+        //public IActionResult GetTournament(int id)
+        //{
+
+        //}
+        private User GetUser()
+        {
+            var userEmail = User.Claims.First(x => x.Type == ClaimTypes.Name).Value;
+            return userRepo.GetUserFromEmail(userEmail);
         }
     }
 }
