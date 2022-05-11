@@ -12,5 +12,10 @@ namespace TournamentWebApi.DataAccess
         IEnumerable<Tournament> GetAllTournaments();
         void SaveTeam(Team team);
         void AddMatch(Match match);
+        Tournament GetTournament(int id);
+        Match GetMatch(int id);
+        Match UpdateMatchWithTeam(int tournamentId, int matchPosition, Team team, int teamNewPosition);
+        Match UpdateMatchWithScore(int matchId, int firstTeamScore, int secondTeamScore);
+        int SaveChanges(); 
     }
 }
