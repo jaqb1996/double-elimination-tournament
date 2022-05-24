@@ -10,7 +10,7 @@ const BracketGenerator = (props) => {
     isUpper,
     updateTournamentData,
   } = props;
-  const bracket = isUpper ? roundsUpperBracket : roundsLowerBracket;
+  const bracket = isUpper === "upper" ? roundsUpperBracket : roundsLowerBracket;
 
   const gridBracketGenerator = (bracket) => {
     const grid = {
@@ -23,17 +23,17 @@ const BracketGenerator = (props) => {
   return (
     <div className="bracket">
       <h3 className="bracket-badge">
-        {isUpper ? "Upperbracket" : "LowerBracket"}
+        {isUpper === "upper" ? "Upperbracket" : "LowerBracket"}
       </h3>
       <div
-        className={`${isUpper ? "upper" : "lower"}-bracket`}
+        className={`${isUpper === "upper" ? "upper" : "lower"}-bracket`}
         style={gridBracketGenerator(bracket)}
       >
         {bracket.map((round) => (
           <Fragment key={nanoid()}>
             <div
               className={`rounds r-${round.roundNumber}-${numberOfContestants}${
-                isUpper ? "" : "-l"
+                isUpper === "upper" ? "" : "-l"
               }`}
               key={nanoid()}
             >
@@ -46,7 +46,7 @@ const BracketGenerator = (props) => {
                   game.id +
                   "-" +
                   numberOfContestants +
-                  `${isUpper ? "" : "-l"}`
+                  `${isUpper === "upper" ? "" : "-l"}`
                 }
                 key={nanoid()}
               >

@@ -47,6 +47,13 @@ body {
   align-items: center;
 }
 
+.finals-bracket {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+}
+
 .date {
   color: rgb(255, 112, 45);
   font-weight: 300;
@@ -64,6 +71,12 @@ body {
   display: flex;
   flex-direction: column;
   white-space: nowrap;
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.game:hover {
+  opacity: 0.8;
 }
 
 .contestant {
@@ -270,6 +283,23 @@ body {
 .div5-8-l {
   grid-area: 2 / 4 / 4 / 5;
 }
+
+/* Finals grid divs */
+.div0-f {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.div1-f {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.div2-f {
+  grid-area: 2 / 2 / 4 / 3;
+}
+.r-1-f {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.r-2-f {
+  grid-area: 1 / 2 / 2 / 3;
+}
 /* Popup style */
 .popup-container {
   position: fixed;
@@ -289,12 +319,14 @@ body {
   max-height: 70vh;
   margin-top: calc(100vh - 85vh - 20px);
   background: #fff;
-  border-radius: 4px;
+  border-radius: 10px;
   padding: 20px;
   border: 1px solid #999;
   overflow: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  color: rgba(0, 103, 120, 1);
 }
 
 .popup-close {
@@ -306,6 +338,7 @@ body {
 .popup-game {
   display: flex;
   justify-content: space-around;
+  max-width: 95%;
 }
 
 .popup-contestant {
@@ -328,11 +361,35 @@ body {
   border: none;
   text-align: center;
   color: rgb(250, 201, 109);
+  cursor: pointer;
 }
 
 .popup-contestant-score::-webkit-input-placeholder {
   color: rgb(250, 201, 109);
   opacity: 1; /*Change the opacity between 0 and 1*/
+}
+
+.popup-date {
+  max-width: 50%;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: rgba(0, 103, 120, 1);
+  border: none;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.popup-date::-webkit-input-placeholder {
+  color: rgba(0, 103, 120, 1);
+  opacity: 1; /*Change the opacity between 0 and 1*/
+}
+
+.popup input:active,
+input:focus {
+  outline: none;
+  border: none;
+  cursor: text;
 }
 
 .popup-submit-btn {
@@ -347,25 +404,43 @@ body {
   text-decoration: none;
 }
 
-/*Loader*/
-.loader-container {
-  margin: auto;
-  margin-top: 40vh;
-  max-width: 50%;
-  display: flex;
-  justify-content: center;
-}
-
+/* loader */
 .loader {
-  border: 8px solid #f3f3f3; /* Light grey */
-  border-top: 8px solid #3498db; /* Blue */
-  border-radius: 50%;
-  max-width: 30px;
-  height: 30px;
-  animation: spin 2s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes spin {
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
   0% {
     transform: rotate(0deg);
   }
@@ -374,21 +449,66 @@ body {
   }
 }
 
+/*Error page*/
+.error-404 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: rgb(255, 112, 45);
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-404--badge {
+  font-weight: 700;
+  font-size: 10em;
+}
+
+.error-404--text {
+  font-size: 1.5em;
+  margin-bottom: 2vh;
+}
+
+.error-404--description {
+  max-width: 40%;
+  font-weight: 300;
+}
+
+/* responiveness */
 @media only screen and (min-width: 767px) {
   .upper-bracket {
-    max-width: 800px;
+    max-width: 70%;
     grid-gap: 5px 20px;
     padding: 10px;
   }
 
   .lower-bracket {
-    max-width: 1200px;
+    max-width: 70%;
+    grid-gap: 5px 20px;
+    padding: 10px;
+  }
+
+  .finals-bracket {
+    max-width: 70%;
     grid-gap: 5px 20px;
     padding: 10px;
   }
 
   .game {
     max-width: 200px;
+  }
+  .bracket {
+    margin-left: 15%;
+  }
+
+  .title {
+    padding-left: 15%;
   }
 }
 
@@ -418,6 +538,10 @@ body {
     max-width: 100%;
     grid-gap: 0.2em 0.5em;
   }
+  .finals-bracket {
+    max-width: 100%;
+    grid-gap: 0.2em 0.5em;
+  }
   .contestant {
     padding: 2px;
   }
@@ -430,6 +554,14 @@ body {
   .popup-game {
     justify-self: center;
   }
+  .error-404 {
+    top: 40%;
+  }
+  .error-404--description {
+    max-width: 80%;
+    font-weight: 500;
+    font-size: 0.8em;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
@@ -441,6 +573,10 @@ body {
     font-size: 0.8rem;
   }
   .lower-bracket {
+    max-width: 100%;
+    font-size: 0.8rem;
+  }
+  .finals-bracket {
     max-width: 100%;
     font-size: 0.8rem;
   }
