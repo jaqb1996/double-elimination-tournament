@@ -36,9 +36,6 @@ const Game = (props) => {
         onClick={popUp ? null : togglePopUp}
         style={cursorPopUpStyle}
       >
-        {popUp ? (
-          <PopUp key={nanoid()} {...props} togglePopUp={togglePopUp} />
-        ) : null}
         <div
           className="contestant first-contestant"
           style={styleFPscore(FPscore, SPscore)}
@@ -51,6 +48,9 @@ const Game = (props) => {
           <span className="contestant-score">{SPscore}</span>
         </div>
       </div>
+      {popUp ? (
+        <PopUp key={nanoid()} {...props} togglePopUp={togglePopUp} />
+      ) : null}
     </>
   );
 };
