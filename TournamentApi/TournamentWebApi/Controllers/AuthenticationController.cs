@@ -23,7 +23,19 @@ namespace TournamentWebApi.Controllers
         [HttpPost]
         public IActionResult Login([FromBody] UserCredentials userCredentials)
         {
-            var token = jwtAuthenticationManager.Authenticate(userCredentials.Email, userCredentials.Password);
+            string token;
+            try
+            {
+                token = jwtAuthenticationManager.Authenticate(userCredentials.Email, userCredentials.Password);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    Message = ex.Message,
+                    StackTrace = ex.StackTrace
+                });
+            }
             if (token == null)
             {
                 return Unauthorized();

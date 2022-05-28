@@ -89,6 +89,7 @@ namespace TournamentWebApi.Controllers
         }
         [HttpGet]
         [Route("[action]/{id}")]
+        [AllowAnonymous]
         public IActionResult Get(int id)
         {
             // TODO: Add implementation for 16 teams

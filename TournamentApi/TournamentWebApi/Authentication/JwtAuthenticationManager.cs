@@ -36,7 +36,7 @@ namespace TournamentWebApi.Authentication
                 {
                     new Claim(ClaimTypes.Name, email)
                 }),
-                Expires = DateTime.Now.AddHours(5),
+                Expires = DateTime.UtcNow.AddHours(5),
                 SigningCredentials = new SigningCredentials(
                         new SymmetricSecurityKey(tokenKey),
                         SecurityAlgorithms.HmacSha256Signature
