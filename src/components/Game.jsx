@@ -40,11 +40,11 @@ const Game = (props) => {
           className="contestant first-contestant"
           style={styleFPscore(FPscore, SPscore)}
         >
-          <span className="contestant-name">{FPname}</span>
+          <span className="contestant-name">&nbsp;{FPname}</span>
           <span className="contestant-score">{FPscore}</span>
         </div>
         <div className="contestant" style={styleSPscore(FPscore, SPscore)}>
-          <span className="contestant-name">{SPname}</span>
+          <span className="contestant-name">&nbsp;{SPname}</span>
           <span className="contestant-score">{SPscore}</span>
         </div>
       </div>

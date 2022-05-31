@@ -4,13 +4,13 @@ import Game from "./Game";
 
 const BracketGenerator = (props) => {
   const {
-    roundsLowerBracket,
-    roundsUpperBracket,
+    lowerBracket,
+    upperBracket,
     numberOfContestants,
     isUpper,
     updateTournamentData,
   } = props;
-  const bracket = isUpper === "upper" ? roundsUpperBracket : roundsLowerBracket;
+  const bracket = isUpper === "upper" ? upperBracket : lowerBracket;
 
   const gridBracketGenerator = (bracket) => {
     const grid = {
@@ -53,10 +53,10 @@ const BracketGenerator = (props) => {
                 <Game
                   date={game.date}
                   round={round.roundNumber}
-                  FPscore={game.FirstParticipant.score}
-                  FPname={game.FirstParticipant.name}
-                  SPscore={game.SecondParticipant.score}
-                  SPname={game.SecondParticipant.name}
+                  FPscore={game.firstTeamScore}
+                  FPname={game.firstTeamName}
+                  SPscore={game.secondTeamScore}
+                  SPname={game.secondTeamName}
                   id={game.id}
                   updateTournamentData={updateTournamentData}
                   isUpper={isUpper}
