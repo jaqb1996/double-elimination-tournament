@@ -70,6 +70,8 @@ const PopUp = (props) => {
             value={formData.date}
             onChange={handleChange}
             spellCheck="false"
+            autoComplete="off"
+            placeholder="Set Date"
           />
           <button
             type="submit"

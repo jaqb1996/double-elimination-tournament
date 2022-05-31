@@ -19,11 +19,8 @@ const Bracket = () => {
 
   useEffect(() => {
     dispatch({ type: ACTIONS.FETCH_DATA });
-    axios({
-      method: "get",
-      url: `http://localhost:8000/tournamentData/${tournamentId}`,
-      responseType: "json",
-    })
+    axios
+      .get(`http://jaqbklo.somee.com/api/tournament/get/${tournamentId}`)
       .then((res) => {
         if (res.status === 200) {
           dispatch({ type: ACTIONS.SUCCESS, data: res.data });
@@ -43,35 +40,31 @@ const Bracket = () => {
     if (isUpper === "upper") {
       j.roundsUpperBracket[round - 1].matches.find(
         (m) => m.id === id
-      ).FirstParticipant.score = FPscore;
+      ).firstTeamScore = FPscore;
       j.roundsUpperBracket[round - 1].matches.find(
         (m) => m.id === id
-      ).SecondParticipant.score = SPscore;
+      ).secondTeamScore = SPscore;
       j.roundsUpperBracket[round - 1].matches.find((m) => m.id === id).date =
         date;
     } else if (isUpper === "lower") {
       j.roundsLowerBracket[round - 1].matches.find(
         (m) => m.id === id
-      ).FirstParticipant.score = FPscore;
+      ).firstTeamScore = FPscore;
       j.roundsLowerBracket[round - 1].matches.find(
         (m) => m.id === id
-      ).SecondParticipant.score = SPscore;
+      ).secondTeamScore = SPscore;
       j.roundsLowerBracket[round - 1].matches.find((m) => m.id === id).date =
         date;
     } else if (isUpper === "finals") {
-      j.finals[round - 1].matches.find(
-        (m) => m.id === id
-      ).FirstParticipant.score = FPscore;
-      j.finals[round - 1].matches.find(
-        (m) => m.id === id
-      ).SecondParticipant.score = SPscore;
-      j.finals[round - 1].matches.find((m) => m.id === id).date = date;
+      j.finals.find((m) => m.id === id).firstTeamScore = FPscore;
+      j.finals.find((m) => m.id === id).secondTeamScore = SPscore;
+      j.finals.find((m) => m.id === id).date = date;
     }
 
     dispatch({ type: ACTIONS.UPDATE_SCORE, data: j });
 
     axios
-      .put(`http://localhost:8000/tournamentData/${tournamentId}`, j)
+      .post(`http://localhost:8000/tournamentData/${tournamentId}`, j)
       .then((res) => {
         console.log(res);
       })
@@ -84,7 +77,7 @@ const Bracket = () => {
         <PageNotFound />
       ) : !loading ? (
         <>
-          <h1 className="title">{tournamentData.tournamentTitle}</h1>
+          <h1 className="title">{tournamentData.name}</h1>
           <BracketGenerator
             key={nanoid()}
             {...tournamentData}

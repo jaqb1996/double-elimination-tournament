@@ -2,107 +2,51 @@
   "tournamentData": [
     {
       "id": "AwvqvKB5Dx",
-      "tournamentTitle": "Tournament Title",
-      "numberOfContestants": 16,
-      "roundsUpperBracket": [
+      "name": "Tournament 1",
+      "numberOfContestants": 8,
+      "upperBracket": [
         {
           "roundNumber": 1,
           "matches": [
             {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 2",
-                "score": 0
-              },
-              "date": "Pon 12",
-              "id": 0
+              "id": 1,
+              "positionNumber": 1,
+              "date": null,
+              "courtNumber": null,
+              "firstTeamScore": 2,
+              "secondTeamScore": 1,
+              "firstTeamName": "Team 1",
+              "secondTeamName": "Team 8"
             },
             {
-              "FirstParticipant": {
-                "name": "Team 3",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 4",
-                "score": 2
-              },
-              "date": "Pon 13",
-              "id": 1
+              "id": 2,
+              "positionNumber": 2,
+              "date": null,
+              "courtNumber": null,
+              "firstTeamScore": null,
+              "secondTeamScore": null,
+              "firstTeamName": "Team 4",
+              "secondTeamName": "Team 5"
             },
             {
-              "FirstParticipant": {
-                "name": "Team 5",
-                "score": 1
-              },
-              "SecondParticipant": {
-                "name": "Team 6",
-                "score": 3
-              },
-              "date": "Pon 14",
-              "id": 2
+              "id": 3,
+              "positionNumber": 3,
+              "date": null,
+              "courtNumber": null,
+              "firstTeamScore": null,
+              "secondTeamScore": null,
+              "firstTeamName": "Team 6",
+              "secondTeamName": "Team 3"
             },
             {
-              "FirstParticipant": {
-                "name": "Team 7",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 8",
-                "score": 0
-              },
-              "date": "Pon 15",
-              "id": 3
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 2
-              },
-              "date": "Pon 12",
-              "id": 4
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 2
-              },
-              "date": "Pon 13",
-              "id": 5
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 2
-              },
-              "date": "Pon 14",
-              "id": 6
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 2
-              },
-              "date": "Pon 15",
-              "id": 7
+              "id": 4,
+              "positionNumber": 4,
+              "date": null,
+              "courtNumber": null,
+              "firstTeamScore": null,
+              "secondTeamScore": null,
+              "firstTeamName": "Team 2",
+              "secondTeamName": "Team 7"
             }
           ]
         },
@@ -110,136 +54,51 @@
           "roundNumber": 2,
           "matches": [
             {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 2
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "date": "Pon 17",
-              "id": 8
+              "id": 5,
+              "positionNumber": 5,
+              "date": null,
+              "courtNumber": null,
+              "firstTeamScore": null,
+              "secondTeamScore": null,
+              "firstTeamName": "Team 1",
+              "secondTeamName": null
             },
             {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 18",
-              "id": 9
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 2
-              },
-              "date": "Pon 17",
-              "id": 10
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 18",
-              "id": 11
-            }
-          ]
-        },
-        {
-          "roundNumber": 3,
-          "matches": [
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": "25"
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": "1"
-              },
-              "date": "Pon 10",
-              "id": 12
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 18",
-              "id": 13
+              "id": 6,
+              "positionNumber": 6,
+              "date": null,
+              "courtNumber": null,
+              "firstTeamScore": null,
+              "secondTeamScore": null,
+              "firstTeamName": null,
+              "secondTeamName": null
             }
           ]
         }
       ],
-      "roundsLowerBracket": [
+      "lowerBracket": [
         {
           "roundNumber": 1,
           "matches": [
             {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 2
-              },
-              "date": "Pon 17",
-              "id": 0
+              "id": 11,
+              "positionNumber": 11,
+              "date": null,
+              "courtNumber": null,
+              "firstTeamScore": null,
+              "secondTeamScore": null,
+              "firstTeamName": "Team 8",
+              "secondTeamName": null
             },
             {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 18",
-              "id": 1
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 2
-              },
-              "date": "Pon 17",
-              "id": 2
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 18",
-              "id": 3
+              "id": 12,
+              "positionNumber": 12,
+              "date": null,
+              "courtNumber": null,
+              "firstTeamScore": null,
+              "secondTeamScore": null,
+              "firstTeamName": null,
+              "secondTeamName": null
             }
           ]
         },
@@ -247,160 +106,68 @@
           "roundNumber": 2,
           "matches": [
             {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 17",
-              "id": 4
+              "id": 9,
+              "positionNumber": 9,
+              "date": null,
+              "courtNumber": null,
+              "firstTeamScore": null,
+              "secondTeamScore": null,
+              "firstTeamName": null,
+              "secondTeamName": null
             },
             {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 17",
-              "id": 5
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 17",
-              "id": 6
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 17",
-              "id": 7
-            }
-          ]
-        },
-        {
-          "roundNumber": 3,
-          "matches": [
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 17",
-              "id": 8
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 17",
-              "id": 9
-            }
-          ]
-        },
-        {
-          "roundNumber": 4,
-          "matches": [
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 17",
-              "id": 10
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 17",
-              "id": 11
+              "id": 10,
+              "positionNumber": 10,
+              "date": null,
+              "courtNumber": null,
+              "firstTeamScore": null,
+              "secondTeamScore": null,
+              "firstTeamName": null,
+              "secondTeamName": null
             }
           ]
         }
       ],
       "finals": [
         {
-          "roundNumber": 1,
-          "matches": [
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 17",
-              "id": 0
-            },
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": 3
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 17",
-              "id": 1
-            }
-          ]
+          "id": 7,
+          "positionNumber": 7,
+          "date": null,
+          "courtNumber": null,
+          "firstTeamScore": null,
+          "secondTeamScore": null,
+          "firstTeamName": null,
+          "secondTeamName": null
         },
         {
-          "roundNumber": 2,
-          "matches": [
-            {
-              "FirstParticipant": {
-                "name": "Team 1",
-                "score": "11"
-              },
-              "SecondParticipant": {
-                "name": "Team 1",
-                "score": 1
-              },
-              "date": "Pon 20",
-              "id": 2
-            }
-          ]
+          "id": 8,
+          "positionNumber": 8,
+          "date": null,
+          "courtNumber": null,
+          "firstTeamScore": null,
+          "secondTeamScore": null,
+          "firstTeamName": null,
+          "secondTeamName": null
+        },
+        {
+          "id": 14,
+          "positionNumber": 14,
+          "date": null,
+          "courtNumber": null,
+          "firstTeamScore": null,
+          "secondTeamScore": null,
+          "firstTeamName": null,
+          "secondTeamName": null
+        },
+        {
+          "id": 13,
+          "positionNumber": 13,
+          "date": null,
+          "courtNumber": null,
+          "firstTeamScore": null,
+          "secondTeamScore": null,
+          "firstTeamName": null,
+          "secondTeamName": null
         }
       ]
     }
