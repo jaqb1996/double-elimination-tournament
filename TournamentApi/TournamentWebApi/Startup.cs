@@ -79,7 +79,11 @@ namespace TournamentWebApi
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.Use(async (context, next) =>
+            {
+                context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+                await next();
+            });
             app.UseHttpsRedirection();
 
             app.UseRouting();

@@ -92,7 +92,6 @@ namespace TournamentWebApi.Controllers
         [AllowAnonymous]
         public IActionResult Get(int id)
         {
-            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             // TODO: Add implementation for 16 teams
             var tournament = tournamentRepo.GetTournament(id);
             if (tournament == null)
