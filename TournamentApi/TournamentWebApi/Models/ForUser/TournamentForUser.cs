@@ -11,9 +11,6 @@ namespace TournamentWebApi.Models.ForUser
         public int NumberOfContestants { get; set; }
         public IList<Round> UpperBracket { get; set; }
         public IList<Round> LowerBracket { get; set; }
-        public MatchForUser FirstSemifinal { get; set; }
-        public MatchForUser SecondSemifinal { get; set; }
-        public MatchForUser ThirdPlaceMatch { get; set; }
-        public MatchForUser Final { get; set; }
+        public MatchForUser[] Finals { get; set; } = new MatchForUser[4]; // 4 final matches: 1 semifinal, 2 semifinal, third place match, final 
     }
 }

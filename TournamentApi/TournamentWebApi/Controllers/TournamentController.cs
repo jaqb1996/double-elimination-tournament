@@ -92,6 +92,7 @@ namespace TournamentWebApi.Controllers
         [AllowAnonymous]
         public IActionResult Get(int id)
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "*");
             // TODO: Add implementation for 16 teams
             var tournament = tournamentRepo.GetTournament(id);
             if (tournament == null)
@@ -128,19 +129,19 @@ namespace TournamentWebApi.Controllers
                     }
                     else if (positionNumber == 7)
                     {
-                        tournamentForUser.FirstSemifinal = matchForUser;
+                        tournamentForUser.Finals[0] = matchForUser; // 1 semifinal
                     }
                     else if (positionNumber == 8)
                     {
-                        tournamentForUser.SecondSemifinal = matchForUser;
+                        tournamentForUser.Finals[1] = matchForUser; // 2 semifinal
                     }
                     else if (positionNumber == 13)
                     {
-                        tournamentForUser.Final = matchForUser;
+                        tournamentForUser.Finals[3] = matchForUser; // Final
                     }
                     else if (positionNumber == 14)
                     {
-                        tournamentForUser.ThirdPlaceMatch = matchForUser;
+                        tournamentForUser.Finals[2] = matchForUser; // Third place match
                     }
                     else
                     {
