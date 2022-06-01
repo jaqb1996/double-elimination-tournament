@@ -22,8 +22,12 @@ namespace TournamentWebApi.Authentication
         }
         public string Authenticate(string email, string password)
         {
-            var passwordHash = AuthHelper.HashPassword(password);
-            if (!authRepo.IsEmailAndPasswordCorrect(email, passwordHash))
+            string passwordHash = null;
+            if (!authRepo.IsEmailCorrect(email, ref passwordHash))
+            {
+                return null;
+            }
+            if (!AuthHelper.VerifyPassword(password, passwordHash))
             {
                 return null;
             }

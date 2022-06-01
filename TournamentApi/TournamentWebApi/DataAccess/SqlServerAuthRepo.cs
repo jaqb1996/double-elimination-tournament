@@ -13,10 +13,15 @@ namespace TournamentWebApi.DataAccess
         {
             this.tournamentContext = tournamentContext;
         }
-        public bool IsEmailAndPasswordCorrect(string email, string passwordHash)
+        public bool IsEmailCorrect(string email, ref string passwordHash)
         {
-            var user = tournamentContext.User.FirstOrDefault(u => u.Email == email && u.PasswordHash == passwordHash);
-            return user != null;
+            var user = tournamentContext.User.FirstOrDefault(u => u.Email == email);
+            if (user == null)
+            {
+                return false;
+            }
+            passwordHash = user.PasswordHash;
+            return true;
         }
     }
 }

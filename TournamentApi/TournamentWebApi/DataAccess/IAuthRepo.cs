@@ -7,6 +7,6 @@ namespace TournamentWebApi.DataAccess
 {
     public interface IAuthRepo
     {
-        bool IsEmailAndPasswordCorrect(string email, string passwordHash);
+        bool IsEmailCorrect(string email, ref string passwordHash);
     }
 }

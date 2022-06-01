@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +10,13 @@ namespace TournamentWebApi.Authentication
     {
         public static string HashPassword(string password)
         {
-            return password; // TODO: actually hash password
+            var hashed = new PasswordHasher<object?>().HashPassword(null, password);
+            return hashed; 
+        }
+        public static bool VerifyPassword(string password, string passwordHash)
+        {
+            var passwordVerificationResult = new PasswordHasher<object?>().VerifyHashedPassword(null, passwordHash, password);
+            return passwordVerificationResult == PasswordVerificationResult.Success;
         }
     }
 }
