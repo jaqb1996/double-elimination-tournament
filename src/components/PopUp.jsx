@@ -1,6 +1,6 @@
+import { nanoid } from "nanoid";
 import React, { useState } from "react";
-import axios from "axios";
-// import { TournamentDataContext } from "../tournamentDataContext";
+import PopUpContestant from "./PopUpContestant";
 
 const PopUp = (props) => {
   const {
@@ -22,6 +22,7 @@ const PopUp = (props) => {
   const [formData, setFormData] = useState({
     FPscore: FPscore,
     SPscore: SPscore,
+    date: date,
   });
 
   const handleSubmit = (e) => {
@@ -31,7 +32,8 @@ const PopUp = (props) => {
       round,
       id,
       formData.FPscore,
-      formData.SPscore
+      formData.SPscore,
+      formData.date
     );
   };
 
@@ -46,27 +48,29 @@ const PopUp = (props) => {
           <div className="popup-close" onClick={togglePopUp}>
             &times;{" "}
           </div>
-          {/* <p onClick={console.log(props)}>Clicked game with ID: {id}</p> */}
           <div className="popup-game">
-            <div className="popup-contestant">
-              <span className="popup-contestant-name">{FPname}</span>
-              <input
-                className="popup-contestant-score"
-                id="FPscore"
-                value={formData.FPscore}
-                onChange={handleChange}
-              ></input>
-            </div>
-            <div className="popup-contestant">
-              <span className="popup-contestant-name">{SPname}</span>
-              <input
-                className="popup-contestant-score"
-                id="SPscore"
-                value={formData.SPscore}
-                onChange={handleChange}
-              ></input>
-            </div>
+            <PopUpContestant
+              key={nanoid()}
+              score={formData.FPscore}
+              name={FPname}
+              handleChange={handleChange}
+              id={"FPscore"}
+            />
+            <PopUpContestant
+              key={nanoid()}
+              score={formData.SPscore}
+              name={SPname}
+              handleChange={handleChange}
+              id={"SPscore"}
+            />
           </div>
+          <input
+            className="popup-date"
+            id="date"
+            value={formData.date}
+            onChange={handleChange}
+            spellCheck="false"
+          />
           <button
             type="submit"
             onClick={handleSubmit}
