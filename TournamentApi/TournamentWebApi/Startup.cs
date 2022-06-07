@@ -1,3 +1,5 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -16,6 +18,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TournamentWebApi.Authentication;
 using TournamentWebApi.DataAccess;
+using TournamentWebApi.Models.FromUser;
+using TournamentWebApi.Validation;
 
 namespace TournamentWebApi
 {
@@ -36,8 +40,10 @@ namespace TournamentWebApi
                 .AddNewtonsoftJson(options =>
             {
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-            });
-
+            })
+                .AddFluentValidation();
+            // For validation
+            services.AddTransient<IValidator<UserRegistrationData>, UserRegistrationDataValidator>();
             // For Entity Framework  
             services.AddSingleton<DbContextOptions<TournamentContext>>();
             //services.AddDbContext<TournamentContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SomeeSqlServer")));
