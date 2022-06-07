@@ -44,6 +44,7 @@ namespace TournamentWebApi
                 .AddFluentValidation();
             // For validation
             services.AddTransient<IValidator<UserRegistrationData>, UserRegistrationDataValidator>();
+            services.AddTransient<IValidator<TournamentFromUser>, TournamentFromUserValidator>();
             // For Entity Framework  
             services.AddSingleton<DbContextOptions<TournamentContext>>();
             //services.AddDbContext<TournamentContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SomeeSqlServer")));
@@ -81,10 +82,7 @@ namespace TournamentWebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            app.UseDeveloperExceptionPage();
             app.Use(async (context, next) =>
             {
                 context.Response.Headers.Add("Access-Control-Allow-Origin", "*");

@@ -22,7 +22,7 @@ namespace TournamentWebApi.DataAccess
 
         public User GetUserFromEmail(string email)
         {
-            return tournamentContext.User.Single(u => u.Email == email);
+            return tournamentContext.User.SingleOrDefault(u => u.Email == email);
         }
     }
 }

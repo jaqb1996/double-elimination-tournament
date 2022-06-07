@@ -52,6 +52,11 @@ namespace TournamentWebApi.DataAccess
                         .FirstOrDefault(t => t.Id == id);
         }
 
+        public Tournament GetTournament(string name)
+        {
+            return context.Tournament.FirstOrDefault(t => t.Name == name);
+        }
+
         public int SaveChanges()
         {
             return context.SaveChanges();
