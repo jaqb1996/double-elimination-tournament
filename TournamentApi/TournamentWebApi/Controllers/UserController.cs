@@ -27,7 +27,6 @@ namespace TournamentWebApi.Controllers
         [HttpPost]
         public IActionResult Register([FromBody] UserRegistrationData userData)
         {
-            //TODO: validate userData
             var user = mapper.Map<User>(userData);
             userRepo.CreateUser(user);
             return StatusCode(201);
