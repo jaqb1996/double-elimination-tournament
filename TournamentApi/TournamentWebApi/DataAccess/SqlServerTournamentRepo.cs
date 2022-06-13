@@ -28,9 +28,30 @@ namespace TournamentWebApi.DataAccess
             context.SaveChanges();
         }
 
+        public bool DeleteTournament(int tournamentId)
+        {
+            Tournament tournament = context.Tournament.FirstOrDefault(t => t.Id == tournamentId);
+            if (tournament is null)
+                return false;
+            context.Tournament.Remove(tournament);
+            return true;
+        }
+
         public IEnumerable<Tournament> GetAllTournaments()
         {
             return context.Tournament;
+        }
+
+        public IEnumerable<object> GetAllTournamentsForUser(User user)
+        {
+            IEnumerable<object> tournaments = context.Tournament
+                .Where(t => t.UserId == user.Id)
+                .Select(t => new
+                {
+                    t.Id,
+                    t.Name
+                });
+            return tournaments;
         }
 
         public Match GetMatch(int id)

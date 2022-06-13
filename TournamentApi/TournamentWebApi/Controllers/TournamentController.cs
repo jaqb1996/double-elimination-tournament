@@ -321,6 +321,26 @@ namespace TournamentWebApi.Controllers
                 tournamentRepo.UpdateMatchWithTeam(tournamentId, (int)WinnerNewMatch, winner, (int)WinnerNewPositionInMatch);
             return Ok();
         }
+        [HttpDelete]
+        [Route("[action]/{tournamentId}")]
+        public IActionResult Delete(int tournamentId)
+        {
+            // TODO: Check if tournament belongs to current user
+            bool wasFound = tournamentRepo.DeleteTournament(tournamentId);
+            if (!wasFound)
+                return StatusCode(204);
+            tournamentRepo.SaveChanges();
+            return StatusCode(200);
+        }
+        [HttpGet]
+        [Route("[action]")]
+        public IActionResult TournamentsForUser()
+        {
+            var user = GetUser();
+            var tournaments = tournamentRepo.GetAllTournamentsForUser(user);
+            return StatusCode(200, tournaments);
+        }
+
         private User GetUser()
         {
             var userEmail = User.Claims.First(x => x.Type == ClaimTypes.Name).Value;
