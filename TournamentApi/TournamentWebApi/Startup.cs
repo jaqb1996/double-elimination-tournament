@@ -86,6 +86,9 @@ namespace TournamentWebApi
             app.Use(async (context, next) =>
             {
                 context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
+                context.Response.Headers.Add("Access-Control-Allow-Headers", "GET, POST, PATCH, PUT, DELETE, OPTIONS");
+                context.Response.Headers.Add("Access-Control-Allow-Methods", "Origin, Content-Type, X-Auth-Token");
+
                 await next();
             });
             app.UseHttpsRedirection();

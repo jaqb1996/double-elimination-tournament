@@ -346,5 +346,13 @@ namespace TournamentWebApi.Controllers
             var userEmail = User.Claims.First(x => x.Type == ClaimTypes.Name).Value;
             return userRepo.GetUserFromEmail(userEmail);
         }
+        [HttpGet]
+        [Route("[action]")]
+        [AllowAnonymous]
+        public IActionResult Test()
+        {
+            var tournament = tournamentRepo.GetTournament("Tournament");
+            return StatusCode(200, tournament);
+        } 
     }
 }
