@@ -45,6 +45,7 @@ namespace TournamentWebApi
             // For validation
             services.AddTransient<IValidator<UserRegistrationData>, UserRegistrationDataValidator>();
             services.AddTransient<IValidator<TournamentFromUser>, TournamentFromUserValidator>();
+            services.AddTransient<IValidator<MatchResultModel>, MatchResultModelValidator>();
             // For Entity Framework  
             services.AddSingleton<DbContextOptions<TournamentContext>>();
             //services.AddDbContext<TournamentContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SomeeSqlServer")));

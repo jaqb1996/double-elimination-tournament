@@ -287,8 +287,6 @@ namespace TournamentWebApi.Controllers
         [Route("[action]/{matchId}")]
         public IActionResult MatchResult([FromBody] MatchResultModel result, int matchId)
         {
-            // TODO: Validate that one result is greater
-
             var match = tournamentRepo.UpdateMatchWithScore(matchId, result.FirstTeamScore, result.SecondTeamScore);
             bool firstTeamWon = match.FirstTeamScore > match.SecondTeamScore;
             Team winner = firstTeamWon ? match.FirstTeam : match.SecondTeam;
@@ -346,13 +344,5 @@ namespace TournamentWebApi.Controllers
             var userEmail = User.Claims.First(x => x.Type == ClaimTypes.Name).Value;
             return userRepo.GetUserFromEmail(userEmail);
         }
-        [HttpGet]
-        [Route("[action]")]
-        [AllowAnonymous]
-        public IActionResult Test()
-        {
-            var tournament = tournamentRepo.GetTournament("Tournament");
-            return StatusCode(200, tournament);
-        } 
     }
 }
