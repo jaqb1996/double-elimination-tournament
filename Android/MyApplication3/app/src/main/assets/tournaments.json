@@ -1,0 +1,144 @@
+[
+  {
+    "Name" : "Tournament 1",
+    "NumberOfContestants": "5",
+    "Teams" : [
+        {
+          "Name": "Team 1_2"
+        },
+        {
+          "Name": "Team 2_2"
+        },
+        {
+          "Name": "Team 3_2"
+        },
+        {
+          "Name": "Team 4_2"
+        }
+      ]
+  },
+  {
+  "Name" : "Tournament 2",
+  "NumberOfContestants": "5",
+  "Teams" : [
+    {
+      "Name": "Team 1_2"
+    },
+    {
+      "Name": "Team 2_2"
+    },
+    {
+      "Name": "Team 3_2"
+    },
+    {
+      "Name": "Team 4_2"
+    }
+  ] },
+  {
+  "Name" : "Tournament 3",
+  "NumberOfContestants": "5",
+  "Teams" : [
+    {
+      "Name": "Team 1_2"
+    },
+    {
+      "Name": "Team 2_2"
+    },
+    {
+      "Name": "Team 3_2"
+    },
+    {
+      "Name": "Team 4_2"
+    }
+  ]
+  },{
+  "Name" : "Tournament 4",
+  "NumberOfContestants": "5",
+  "Teams" : [
+    {
+      "Name": "Team 1_2"
+    },
+    {
+      "Name": "Team 2_2"
+    },
+    {
+      "Name": "Team 3_2"
+    },
+    {
+      "Name": "Team 4_2"
+    }
+  ]
+},
+  {
+    "Name" : "Tournament 5",
+    "NumberOfContestants": "5",
+    "Teams" : [
+      {
+        "Name": "Team 1_2"
+      },
+      {
+        "Name": "Team 2_2"
+      },
+      {
+        "Name": "Team 3_2"
+      },
+      {
+        "Name": "Team 4_2"
+      }
+    ] },
+  {
+    "Name" : "Tournament 6",
+    "NumberOfContestants": "5",
+    "Teams" : [
+      {
+        "Name": "Team 1_2"
+      },
+      {
+        "Name": "Team 2_2"
+      },
+      {
+        "Name": "Team 3_2"
+      },
+      {
+        "Name": "Team 4_2"
+      }
+    ]
+  },
+  {
+    "Name" : "Tournament 7",
+    "NumberOfContestants": "5",
+    "Teams" : [
+      {
+        "Name": "Team 1_2"
+      },
+      {
+        "Name": "Team 2_2"
+      },
+      {
+        "Name": "Team 3_2"
+      },
+      {
+        "Name": "Team 4_2"
+      }
+    ]
+  }
+,
+  {
+    "Name" : "Tournament 8",
+    "NumberOfContestants": "5",
+    "Teams" : [
+      {
+        "Name": "Team 1_2"
+      },
+      {
+        "Name": "Team 2_2"
+      },
+      {
+        "Name": "Team 3_2"
+      },
+      {
+        "Name": "Team 4_2"
+      }
+    ]
+  }
+]

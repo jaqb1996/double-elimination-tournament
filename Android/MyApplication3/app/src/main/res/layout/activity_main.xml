@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C7D4DD"
     tools:context=".MainActivity">
 
     <Button
@@ -11,27 +12,37 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="190dp"
         android:layout_height="80dp"
-        android:layout_marginTop="225dp"
+        android:layout_marginBottom="280dp"
+        android:background="@color/purple_500"
         android:onClick="watch_the_tournament"
         android:text="Obserwuj turniej"
+        android:textAlignment="center"
+        android:textColor="#DEEBF4"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="#D5C4C4" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/login"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="190dp"
         android:layout_height="80dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginBottom="32dp"
+
+        android:background="#ADDFED08"
         android:onClick="login"
         android:text="Zaloguj się"
+        android:textAlignment="center"
+        android:textColor="#DEEBF4"
+        android:textIsSelectable="false"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/show"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/show"
-        app:strokeColor="#D5C4C4" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
